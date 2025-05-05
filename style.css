@@ -1,0 +1,284 @@
+
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #1e1e1e;
+    --project-bg: #1f1f1f;
+}
+
+.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #121212;
+    --header-bg: #f5f5f5;
+    --project-bg: #e0e0e0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--text-color);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.resume-button {
+    display: inline-block; /* Membuat tombol seukuran konten */
+    padding: 10px 20px; /* Ruang dalam tombol */
+    font-size: 16px; /* Ukuran font */
+    color: white; /* Warna teks */
+    background-color: #ff7f00; /* Warna latar belakang */
+    border: none; /* Menghapus batas */
+    border-radius: 5px; /* Sudut membulat */
+    text-decoration: none; /* Menghapus garis bawah */
+    transition: background-color 0.3s; /* Efek transisi untuk hover */
+    margin-top: 15px; /* Jarak atas tombol */
+}
+
+.resume-button:hover {
+    background-color: #ff7f33; /* Warna latar belakang saat hover */
+}
+
+.skills {
+    margin: 30px 0;
+}
+
+.skills h2 {
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+.skill {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 15px; /* Ukuran ikon untuk keterampilan */
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.2);
+}
+
+.orange {
+    color: #ff7f00; /* Warna oranye */
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.project {
+    background: var(--project-bg);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Bayangan lebih kuat saat hover */
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem; /* Ukuran font untuk judul proyek */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--header-bg);
+    color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .resume-button {
+        padding: 10px 15px; /* Ukuran tombol lebih kecil di layar kecil */
+    }
+
+    .project {
+        padding: 10px; /* Padding lebih kecil untuk proyek di layar kecil */
+    }
+}
+
+.image-container {
+width: 100%;
+max-width: 100%; /* Maximum width of the image container */
+height: 400px; /* Fixed height */
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden; /* Hides overflow for images larger than the container */
+margin: auto; /* Center the container */
+}
+
+.image-container img {
+width: 100%; /* Image will take full width of the container */
+height: 100%; /* Image will take full height of the container */
+object-fit: cover; /* Cover the container without distorting the image */
+}
+
+.slideshow-container {
+position: relative;
+max-width: 600px; /* Maximum width for the slideshow */
+margin: auto; /* Center the slideshow */
+overflow: hidden; /* Hide overflowing content */
+}
+
+.slide-org {
+display: none; /* Hidden by default */
+text-align: center; /* Center the text */
+padding: 20px; /* Padding around the slide content */
+background: #fff; /* White background */
+border-radius: 10px; /* Rounded corners */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.active {
+display: block; /* Show active slide */
+}
+
+.fade {
+animation: fadeEffect 1.5s; /* Apply fade effect */
+}
+
+@keyframes fadeEffect {
+from { opacity: 0.4; } /* Start with lower opacity */
+to { opacity: 1; } /* Fade to full opacity */
+}
+
+.prev-org,
+.next-org {
+position: absolute; /* Positioning buttons absolutely within the slideshow */
+top: 50%; /* Center vertically */
+transform: translateY(-50%); /* Adjust to center properly */
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+color: white; /* White text color */
+border: none; /* No border */
+padding: 10px; /* Padding for the buttons */
+cursor: pointer; /* Pointer cursor on hover */
+border-radius: 5px; /* Slightly rounded corners for buttons */
+}
+
+.prev-org { left: 10px; } /* Position for the previous button */
+.next-org { right: 10px; } /* Position for the next button */
+
+.dot-container {
+text-align: center; /* Center the dots */
+margin-top: 10px; /* Spacing above dots */
+}
+
+.dot {
+height: 10px; /* Dot height */
+width: 10px; /* Dot width */
+margin: 0 5px; /* Spacing between dots */
+background-color: #bbb; /* Default dot color */
+border-radius: 50%; /* Circular shape */
+display: inline-block; /* Inline block for spacing */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dot.active {
+background-color: #717171; /* Active dot color */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+.image-container {
+max-width: 100%; /* Full width on smaller screens */
+height: auto; /* Auto height to maintain aspect ratio */
+}
+
+.slideshow-container {
+max-width: 100%; /* Full width on smaller screens */
+}
+
+.prev-org, .next-org {
+padding: 8px; /* Smaller padding for buttons */
+}
+
+.dot {
+height: 8px; /* Smaller dots */
+width: 8px; /* Smaller dots */
+}
+}
+
+.certificate {
+padding: 20px;
+text-align: center;
+}
+
+.orange {
+color: orange;
+}
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+gap: 10px; /* Jarak antar gambar */
+max-width: 800px; /* Sesuaikan lebar maksimal */
+margin: auto; /* Agar galeri berada di tengah */
+}
+
+.certificate-image {
+width: 100%; /* Biar gambar responsif di dalam grid */
+height: auto;
+border-radius: 5px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease-in-out;
+}
+
+.certificate-image:hover {
+transform: scale(1.05);
+}
+
